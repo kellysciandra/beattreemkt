@@ -5,11 +5,9 @@ class Footer extends Component {
     render() {
         return (
             <div className='bottom'>
-                <Nav>
+                <Nav className='botton_nav'>
                     <NavItem className='footer_column1'><br></br>
                         beattreeMKT
-                        <NavLink className='footer_link' href="#">What is beattreeMTK</NavLink>
-                        <NavLink className='footer_link' href="#">help</NavLink>
                         <NavLink className='footer_link' href="#">privacy</NavLink>
                         <NavLink className='footer_link' href="#">terms and conditions</NavLink>
                     </NavItem>

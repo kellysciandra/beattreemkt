@@ -3,47 +3,71 @@ import ArtistForm from './ArtistForm.js'
 import kelly from '../images/kelly.png'
 import AudioPlayer from 'react-modular-audio-player';
 import music from '../images/music.mp3'
-import { Card, CardBody, Button, CardTitle, CardText, CardImg, CardLink, CardFooter} from 'reactstrap';
+import { Card, CardBody, CardTitle, CardText, CardImg, CardLink, CardFooter} from 'reactstrap';
+import { connect } from 'react-redux'
+import { logoutArtist } from '../actions/authActions'
 
 class ArtistDashboard extends Component {
-    render() {
 
-        // if artist isn't signed in render <ArtistForm/>
-        // else render homepage 
 
+    logout = (event) => {
+        event.preventDefault()
+        this.props.logoutArtist()
+        console.log('logged_out')
+    }
+    
+    
+    render() { console.log(this.props.artist)
         let playlist = [
             {
-                src: {music},
+                src: '../images/music.mp3',
                 title: "titty",
                 artist: "tittyboy"
             }
         ]
+        const artist = this.props.auth ? 
+        <Card className='artist_card'>
+        <CardImg top width="100%" src={kelly} alt="Card image cap" />
+        <CardBody>
+        <CardTitle>{this.props.artist.name}</CardTitle>
+        <CardText>{this.props.artist.genre}</CardText>
+        <CardText>{this.props.artist.software}</CardText>
+        <CardText>{this.props.artist.hardware}</CardText>
+        <CardText>
+        <small className="text-muted">Last updated 3 mins ago</small>
+        </CardText>
+        <CardLink href="/artist/edit">edit profile</CardLink>
+        <CardLink href="#">add a beat</CardLink>
+        </CardBody>
+        <div className='profile_beat_container'>
+        <div className='artist_beat_box'>
+        <CardFooter className='artist_profile_beat'><AudioPlayer audioFiles={playlist} /></CardFooter>
+        </div>
+        <div className='artist_beat_box2'>
+        <CardFooter className='artist_profile_beat'><AudioPlayer audioFiles={playlist} /> </CardFooter>
+        </div>
+        <div className='artist_beat_box3'>
+        <CardFooter className='artist_profile_beat'><AudioPlayer audioFiles={playlist} /> </CardFooter>
+        </div>
+        </div>
+        </Card>     
+         : <ArtistForm/>
 
         return (
-            <div>
-         
-                <Card className='artist_card'>
-                <CardImg top width="100%" src={kelly} alt="Card image cap" />
-                <CardBody>
-                <CardTitle>Artist Name</CardTitle>
-                <CardText>Artist Genre</CardText>
-                <CardText>Artist Software</CardText>
-                <CardText>Artist Hardware</CardText>
-                <CardText>
-                <small className="text-muted">Last updated 3 mins ago</small>
-                </CardText>
-                <CardLink href="#">edit profile</CardLink>
-                <CardLink href="#">add a beat</CardLink>
-                </CardBody>
-                </Card>
-
-                <h1>beats</h1>
-                <CardFooter className='artist_profile_beat'><AudioPlayer audioFiles={playlist} /> </CardFooter>
-                <CardFooter className='artist_profile_beat'><AudioPlayer audioFiles={playlist} /> </CardFooter>
-                <CardFooter className='artist_profile_beat'><AudioPlayer audioFiles={playlist} /> </CardFooter>
+            <div className='artist_main'>
+                <button onClick={this.logout} className='logout_button'>logout</button>
+            {artist}
             </div>
         );
     }
 }
 
-export default ArtistDashboard;
+
+const mapStateToProps = (state) => {
+    return {
+        auth: state.auth.isAuthenticated,
+        artist: state.auth.artist
+    }
+}
+
+export default connect(mapStateToProps, {logoutArtist})(ArtistDashboard);

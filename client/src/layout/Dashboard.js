@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import Beats from '../beats/Beats.js'
+import { connect } from 'react-redux';
+
+
 
 class Dashboard extends Component {
-    render() {
+
+
+    render() { console.log(this.props.artist)
+  
         return (
             <div className='homepage'>
                 <div className='btn_container'>
@@ -20,9 +26,8 @@ class Dashboard extends Component {
                 </div>
                 </div>
                 <div className='btn_container3'>
-                    <i class="fab fa-spotify fa-5x"></i><i class="fab fa-instagram fa-5x"></i>
+                    <a href="https://www.instagram.com/beattreemkt/"><i class="fab fa-spotify fa-5x"></i></a><i class="fab fa-instagram fa-5x"></i>
                 </div>
-
                 <div className='beat_container'>
                 <Beats />
                 </div>
@@ -31,4 +36,22 @@ class Dashboard extends Component {
     }
 }
 
-export default Dashboard;
+const mapStateToProps = state => { 
+    return {
+      artist: state.auth.artist,
+      auth: state.auth.isAuthenticated
+    }
+  }
+  
+  const mapDispatchToProps = dispatch => {
+    return {
+    
+    }
+  }
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(Dashboard)
+
+
+
+
+

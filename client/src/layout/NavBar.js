@@ -1,34 +1,48 @@
 import React, { useState } from 'react';
-import { Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, NavbarBrand  } from 'reactstrap';
+import { connect } from 'react-redux';
+import { Collapse, Navbar, NavbarToggler, Nav, NavItem, NavbarBrand  } from 'reactstrap';
+import SignedInLinks from './SignedInLinks'
+import SignedOutLinks from './SignedOutLinks'
 
-const NavBar = (props) => {
+const NavBar = (props) => { console.log(props)
   const [collapsed, setCollapsed] = useState(true);
 
   const toggleNavbar = () => setCollapsed(!collapsed);
 
+  const links = (props.artist.id) ? <SignedInLinks />
+        : <SignedOutLinks />
+
+
   return (
     <div>  
-   
       <Navbar className='nav' light>
         <NavbarToggler onClick={toggleNavbar} className='toggler'/>
           <Collapse isOpen={!collapsed} navbar>
             <Nav navbar>
               <NavItem>
-              <NavLink href="/signup/" className='link'>sign/up</NavLink>
-              <NavLink href="/login/" className='link'>sign/in</NavLink>
-              <NavLink href="/" className='link'>home</NavLink>
+                {links}
               </NavItem>
             </Nav>
           </Collapse>
-        {/* <NavLink href='signup' className='top_link1'>artist</NavLink>
-        <NavLink href='signup' className='top_link2'>producer</NavLink>  */}
         <NavbarBrand href='/' className='brand_link'> beattreeMKT</NavbarBrand>   
       </Navbar>
-
-
-  
     </div>
   );
 }
 
-export default NavBar;
+
+const mapStateToProps = state => {
+  return {
+    artist: state.auth.artist
+  }
+}
+
+
+export default connect(mapStateToProps)(NavBar);
+
+
+
+
+
+
+

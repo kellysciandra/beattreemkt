@@ -7,6 +7,7 @@ import { setCurrentArtist, logoutArtist} from './actions/authActions'
 
 
 //components
+import BeatsDashboard from './beats/BeatsDashboard.js'
 import ArtistSignup from './auth/ArtistSignup.js'
 import ArtistLogin from './auth/ArtistLogin.js'
 import Dashboard from './layout/Dashboard'
@@ -44,21 +45,18 @@ if (localStorage.jwtToken) {
   }
 }
 
-
-
-function App() {
+function App(props) { 
   return (
     <Provider store={store}>
     <Router history={history}>
       <div>
-        <NavBar />
+        <NavBar logout={logoutArtist()}/>
           <Route exact path="/" component={Dashboard} />
           <Route exact path="/signup" component={ArtistSignup} />
           <Route exact path="/login" component={ArtistLogin} />
           <Route exact path="/artist/edit" component={ArtistForm} />
-  
+          <Route exact path="/beats" component={BeatsDashboard} />
           {/* <Route exact path="/artist" component={ArtistDashboard} /> */}
-     
       <Switch>
       <PrivateRouteArtist exact path='/artist' component={ArtistDashboard} />
       </Switch>
@@ -68,5 +66,33 @@ function App() {
   </Provider>
   );
 }
-
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

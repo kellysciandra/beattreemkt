@@ -9,70 +9,13 @@ body {
   font-family: 'Rubik', sans-serif;
 }
 
-/* signup page */
-/* .form-light .font-small {
-  font-size: 0.8rem; }
-
-.form-light [type="radio"] + label,
-.form-light [type="checkbox"] + label {
-  font-size: 0.8rem; }
-
-.form-light [type="checkbox"] + label:before {
-  top: 2px;
-  width: 15px;
-  height: 15px; }
-
-.form-light input[type="checkbox"] + label:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 17px;
-  height: 17px;
-  z-index: 0;
-  border-radius: 1px;
-  margin-top: 2px;
-  -webkit-transition: 0.2s;
-  transition: 0.2s; }
-
-.form-light input[type="checkbox"]:checked + label:before {
-  top: -4px;
-  left: -3px;
-  width: 12px;
-  height: 22px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: transparent #EB3573 #EB3573 transparent;
-  -webkit-transform: rotate(40deg);
-  -ms-transform: rotate(40deg);
-  transform: rotate(40deg);
-  -webkit-backface-visibility: hidden;
-  -webkit-transform-origin: 100% 100%;
-  -ms-transform-origin: 100% 100%;
-  transform-origin: 100% 100%; }
-
-.form-light .footer {
-  border-bottom-left-radius: .3rem;
-  border-bottom-right-radius: .3rem; } */
-
-
-
   /* navbar */
-
-  /* color pallet 
-  #182628
-  #65CCB8
-  #57BA98
-  #3B945E
-  #F2F2F2 */
-
   .nav {
     border: 5px solid
   }
   .toggler {
     border: none!important;
   }
-    
   .link {
     border: none;
     font-size: 2em;
@@ -101,7 +44,6 @@ body {
   .brand_link {
     border: 5px solid black;
     font-size: 2.5em!important;
-    margin-right: 50%;
     font-style: oblique;
     font-weight: bolder;
     color: darkorange !important;
@@ -112,14 +54,128 @@ body {
     transform: rotate(-10deg);
 
   }
-  /* //signup form */
 
+
+/* dashboard */
+.homepage {
+  border: 5px solid;
+  height: 1250px
+}
+.btn_container {
+  margin-top: 10%;
+  border: none;
+}
+
+.dash_btn1 {
+  border: none;
+  margin-left: 5%;
+  height: 250px;
+  width: 250px;
+  background-color: #EB3573;
+  display: inline-block;
+}
+.artist {
+  border: none;
+  color: greenyellow;
+  font-size: 8em;
+  transform: rotate(-20deg);
+}
+.dash_btn2 {
+  height: 250px;
+  width: 250px;
+  background-color: #182628;
+  display: inline-block;
+}
+.btn_container2 {
+  border: none;
+  margin-top: 10%;
+}
+.dash_btn3 {
+  border: none;
+  margin-left: 5%;
+  height: 250px;
+  width: 250px;
+  background-color: #182628;
+  display: inline-block;
+}
+.dash_btn4 {
+  border: none;
+  height: 250px;
+  width: 250px;
+  background-color: darkorange;
+  display: inline-block;
+}
+
+.btn_container3 {
+  border: none;
+  margin-top: 5%;
+  margin-left: 10%;
+  color: none !important;
+}
+
+.fab {
+  border: none;
+  margin-left: 5%;
+  color:  none;
+}
+
+.a {
+  color: none !important;
+}
+.cards {
+    border: none;
+    width: 70%;
+}
+
+  /* beat cards  <Beats /> */
+  .recent_uploads {
+    border: none;
+    margin-left: -5%;
+    font-size: 2em!important;  
+    writing-mode: vertical-rl;
+    position: fixed;
+    border-right: 2px solid greenyellow;
+  }
+  .beat_container {
+    border-left: 5px solid;
+    margin-top: -90%;
+    margin-left: 65%;
+   }
+  .beat_cards_right {
+    width: 40%;
+    margin-left: 10%;
+    margin-top: 10%;
+    border: none!important;
+  }
+  .card-img-top {
+    max-width: 100%;
+    height: 15vw;
+    object-fit: cover;
+    border-image-width: 75%;
+   border-top-right-radius: 50%;
+  }
+  .card_name {
+    border: none;
+    max-height: 250px;
+    margin-left: 100%;;
+    margin-top: -100px;
+    writing-mode: vertical-lr;
+    text-orientation: initial;
+  }
+  .text-muted {
+    border: none;
+  }
+  .audio-player {
+    border: 5px solid
+  }
+
+  
+  /* //signup form */
   .signup_form {
     display: flex;
     margin-left: 25%;
     margin-top: -15%;
   }
-
   .signup_btn1 {
     margin-top: 10%;;
     border: none;
@@ -129,7 +185,6 @@ body {
     background-color: #EB3573;
     display: inline-block;
   }
-
   .signup_btn2 {
     border: none;
     margin-top: -10%;
@@ -139,7 +194,6 @@ body {
     background-color: #182628;
     display: inline-block;
   }
-
   .signup_artist {
     border: none;
     color: greenyellow;
@@ -160,7 +214,6 @@ body {
       margin-left: 25%;
       margin-top: -10%;
     }
-
     .form_btn1 {
       margin-top: 10%;;
       border: none;
@@ -170,7 +223,6 @@ body {
       background-color: rgb(37, 34, 35);
       display: inline-block;
     }
-
     .form_btn2 {
       border: none;
       margin-top: -10%;
@@ -182,146 +234,6 @@ body {
     }
 
 
-  /* footer */
-  .bottom { 
-    margin-top: 5%;
-    margin-bottom: 5%;
-    width: 75%;
-    margin-left: 20%;
- 
-  }
-  .botton_nav {
-    border: none;
-  
-  }
-
-  .footer_link {
-    color:   #718f94!important;   
-  }
-
-
-  /* beat cards  <Beats /> */
-  
-  .recent_uploads {
-    border: none;
-    margin-left: 60%;
-    margin-top: -2%;
-    font-size: 2em!important;  
-    writing-mode: vertical-rl;
-    position: fixed;
-    border-right: 2px solid greenyellow;
-  }
-  .beat_cards_right {
-    border: none;
-    width: 30%;
-    margin-left: 65%;
-    margin-top: 10%;
-    border: none!important;
-  }
-  .card-img-top {
-    border: none;
-    max-width: 60%;
-    height: 20vw;
-    object-fit: cover;
-    border-image-width: 75%;
-   border-top-right-radius: 50%;
-  }
-  .card_name {
-    border: none;
-    max-height: 250px;
-    margin-left: 60%;;
-    margin-top: -100px;
-    writing-mode: vertical-lr;
-    text-orientation: initial;
-  }
-
-  .beat_container {
-    border: none;
-   margin-top: -100%;
-   margin-left: -10%;
-  }
-
-  .text-muted {
-    border: none;
-  }
-
-  .audio-player {
-    border: 5px solid
-  }
- 
-
-  
-  /* dashboard */
-
-  .homepage {
-    border: 5px solid;
-    height: 1250px
-  }
-  
-  .btn_container {
-    margin-top: 10%;
-    border: none;
-  }
-
-.dash_btn1 {
-  border: none;
-  margin-left: 5%;
-  height: 250px;
-  width: 250px;
-  background-color: #EB3573;
-  display: inline-block;
-}
-
-.artist {
-  border: none;
-  color: greenyellow;
-  font-size: 8em;
-  transform: rotate(-20deg);
-}
-.dash_btn2 {
-  height: 250px;
-  width: 250px;
-  background-color: #182628;
-  display: inline-block;
-}
-
-
-.btn_container2 {
-  border: none;
-  margin-top: 10%;
-}
-
-.dash_btn3 {
-  border: none;
-  margin-left: 5%;
-  height: 250px;
-  width: 250px;
-  background-color: #182628;
-  display: inline-block;
-}
-.dash_btn4 {
-  border: none;
-  height: 250px;
-  width: 250px;
-  background-color: darkorange;
-  display: inline-block;
-}
-
-.btn_container3 {
-  border: none;
-  margin-top: 10%;;
-  margin-left: 10%
-}
-
-.fab {
-  border: none;
-  margin-left: 5%;
-
-}
-.cards {
-    border: none;
-    width: 70%;
-}
 
 
 
@@ -333,7 +245,7 @@ body {
   }
   .artist_card {
     border: none !important ;
-    width: 50%;
+    width: 40%;
     margin-left: 20%;
     margin-top: 10%;
 
@@ -343,12 +255,12 @@ body {
     background: none !important;
     width: 50%;
     margin-left: 25%;
-    
   }
 
   .artist_beat_box {
     border: none;
-    margin-left: 65%;
+    margin-left: 95%;
+    margin-top: 20%;
     height: 100px;
     width: 100px;
     background-color: darkorange;
@@ -356,7 +268,7 @@ body {
   }
   .artist_beat_box2 {
     border: none;
-    margin-left: 65%;
+    margin-left: 95%;
     height: 100px;
     width: 100px;
     background-color: #EB3573;
@@ -364,7 +276,7 @@ body {
   }
   .artist_beat_box3 {
     border: none;
-    margin-left: 65%;
+    margin-left: 95%;
     height: 100px;
     width: 100px;
     background-color: greenyellow;
@@ -374,4 +286,61 @@ body {
   .profile_beat_container {
     margin-top: -80%;
     margin-bottom: 50%;
+    border: 10px solid;
   }
+
+
+
+  /* beats main dashboard */
+
+  .beats_dashboard_container {
+    border: 5px solid;
+
+  }
+
+  .beats_dashboard_header {
+    margin-left: 20%;
+    margin-top: 10%;
+    font-size: 2em!important;  
+    writing-mode: vertical-rl;
+    position: fixed;
+    border-right: 5px solid greenyellow;
+  }
+
+  .beats_cards_dashboard {
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 10%;
+    border: none!important;
+    border: 5px solid
+  }
+
+  .beats_dashboard_spotify {
+   margin-left: 60%;
+   margin-top: -10%;
+   border: 5px solid greenyellow;
+
+   width: 15%;
+   color: black !important
+  }
+
+
+
+
+
+
+
+
+    /* footer */
+    .bottom { 
+      margin-top: 5%;
+      margin-bottom: 5%;
+      width: 75%;
+      margin-left: 20%;
+    }
+    .botton_nav {
+      border: none;
+    }
+    .footer_link {
+      color:   #718f94!important;   
+    }

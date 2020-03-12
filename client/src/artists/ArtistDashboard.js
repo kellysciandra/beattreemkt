@@ -9,15 +9,7 @@ import { logoutArtist } from '../actions/authActions'
 
 class ArtistDashboard extends Component {
 
-
-    logout = (event) => {
-        event.preventDefault()
-        this.props.logoutArtist()
-        console.log('logged_out')
-    }
-    
-    
-    render() { console.log(this.props.artist)
+    render() { console.log(this.props)
         let playlist = [
             {
                 src: '../images/music.mp3',
@@ -25,6 +17,7 @@ class ArtistDashboard extends Component {
                 artist: "tittyboy"
             }
         ]
+
         const artist = this.props.auth ? 
         <Card className='artist_card'>
         <CardImg top width="100%" src={kelly} alt="Card image cap" />
@@ -55,7 +48,6 @@ class ArtistDashboard extends Component {
 
         return (
             <div className='artist_main'>
-                <button onClick={this.logout} className='logout_button'>logout</button>
             {artist}
             </div>
         );
@@ -70,4 +62,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {logoutArtist})(ArtistDashboard);
+export default connect(mapStateToProps)(ArtistDashboard);

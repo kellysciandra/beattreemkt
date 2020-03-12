@@ -9,7 +9,7 @@ import joy from '../images/joy.png'
 import AudioPlayer from 'react-modular-audio-player';
 import music from '../images/music.mp3'
 
-class Beats extends Component {
+class BeatsDashboard extends Component {
 
  
     render() {
@@ -21,20 +21,25 @@ class Beats extends Component {
             }
         ]
         return (
-            <div>
-                <h1 className='recent_uploads'>recent uploads</h1>
-                <div className='beat_cards_right'>
+            <div className='beats_dashboard_container'>
+                <h1 className='beats_dashboard_header'></h1>
+                <div className='beats_cards_dashboard'>
                 <Card className="card border-0" >
-                    <Card.Img className='image' variant="top" src={kelly} />
-                    <Card.Title className='card_name'>kellynobody</Card.Title> 
-                    <Card.Body>
+                    <Card.Img className='image_dashboard' variant="top" src={kelly} />
+                    <Card.Title className='card_name_dashboard'>kellynobody</Card.Title> 
+                    <div className='beats_dashboard_spotify'>
+                    <a href="https://www.instagram.com/beattreemkt/"><i class="fab fa-spotify fa-2x"></i></a>
+                    <i class="fab fa-instagram fa-2x"></i>
+                    <Card.Body></Card.Body>
+                        </div>
                     <AudioPlayer audioFiles={playlist} /> 
                     <small className="text-muted">uploaded 3 mins ago  </small>
                     <i class="far fa-user fa-2px"></i>
                     </Card.Body>
+                   
                 </Card>
 
-                <Card className="card border-0" >
+                {/* <Card className="card border-0" >
                     <Card.Img className='image' variant="top" src={joy} />
                     <Card.Title className='card_name'>johnathon</Card.Title> 
                     <Card.Body>
@@ -52,7 +57,7 @@ class Beats extends Component {
                     <small className="text-muted">uploaded 3 mins ago   </small>
                     <i class="far fa-user fa-2px"></i>
                     </Card.Body>
-                </Card>
+                </Card> */}
 
              </div>
             </div>
@@ -60,4 +65,4 @@ class Beats extends Component {
     }
 }
 
-export default Beats;
+export default BeatsDashboard;

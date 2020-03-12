@@ -38,7 +38,8 @@ export const loginArtist = artistData => dispatch => {
 export const setCurrentArtist = decoded => { console.log(decoded)
   return {
     type: SET_CURRENT_ARTIST,
-    payload: decoded
+    payload: decoded,
+    artist: decoded
   };
 };
 

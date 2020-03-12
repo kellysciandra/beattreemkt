@@ -3,16 +3,18 @@ import { Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
+
 const PrivateRouteArtist = ({ component: Component, auth, ...rest }) => (
   <Route
     {...rest}
     render={props =>
+    
       auth.isAuthenticated === true ? (
         <Component {...props} />
       ) : (
-        <Redirect to="/artist"/>
+        <Redirect to="/"/>
       )
-    }
+      }
   />
 );
 PrivateRouteArtist.propTypes = {

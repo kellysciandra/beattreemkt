@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import ArtistForm from './ArtistForm.js'
 import kelly from '../images/kelly.png'
 import AudioPlayer from 'react-modular-audio-player';
-import music from '../images/music.mp3'
+// import music from '../images/music.mp3'
 import { Card, CardBody, CardTitle, CardText, CardImg, CardLink, CardFooter} from 'reactstrap';
 import { connect } from 'react-redux'
-import { logoutArtist } from '../actions/authActions'
+// import { logoutArtist } from '../actions/authActions'
 
 class ArtistDashboard extends Component {
 

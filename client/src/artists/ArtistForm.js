@@ -1,10 +1,17 @@
 import React, { Component } from "react";
+import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBInput, MDBBtn } from 'mdbreact';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { withRouter } from 'react-router-dom'
+
+//imports
 import { editArtist } from "../actions/authActions";
 
-import { withRouter } from 'react-router-dom'
-import { Form, FormGroup, Label, Input, FormText, Button } from 'reactstrap';
+
+import '@fortawesome/fontawesome-free/css/all.min.css'; 
+import 'bootstrap-css-only/css/bootstrap.min.css'; 
+// import 'mdbreact/dist/css/mdb.css';
+
 
 class ArtistForm extends Component {
     constructor() {
@@ -30,9 +37,10 @@ class ArtistForm extends Component {
       }
     }
 
+
     handleChange = event => {
       this.setState({
-        [event.target.name]: event.target.value
+        [event.target.id]: event.target.value
       })
     }
 
@@ -49,92 +57,42 @@ class ArtistForm extends Component {
         image: this.state.image,
         beat: this.state.beat
       }
-
       this.props.editArtist(artistData)
+      //this.props.history.push('./artist)
     }
 
-
-
     render() {
-
-      const { spotify_url, instagram_url, image, beat, software, genre, bio} = this.state
       return (
         <div>
-          <div className='form_btn1'><a href='/artist'><h1 className='form_header'>please complete your profile</h1></a></div>      
-        <div className='signup_form2'>
-        <Form onSubmit={this.handleSubmit}>
-        <FormGroup>
-          <Label>any information you'd like to provide</Label>
-        </FormGroup>
+          <div className='form_btn1'><a href='/artist'><h1 className='form_header'>complete your profile</h1></a></div>      
+            <div className='signup_form2'>
+              <MDBContainer>
+                <MDBRow>
+                  <MDBCol md="8">
+                    <MDBCard>
+                        <MDBCardBody  className="mx-4">
+                      <div className="text-center"> <h3 className="mb-5"> <strong>sign/up</strong> </h3> </div>
 
-        <FormGroup>
-          <Label for="exampleUrl">Spotify URL</Label>
-          <Input
-            type="url"
-            name="spotify_url"
-            id="exampleUrl"
-            placeholder="link to spotify"
-            value={spotify_url}
-            onChange={this.handleChange}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label for="instagram_url">Instagram URL</Label>
-          <Input
-             type="url"
-            name="instagram_url"
-            id="exampleNumber"
-            placeholder="link to instagram"
-            value={instagram_url}
-            onChange={this.handleChange}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label for="software">Most Used Software</Label>
-          <Input
-            type="search"
-            name="software"
-            id="exampleSearch"
-            placeholder="most used software"
-            value={software}
-            onChange={this.handleChange}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label for="exampleSearch">Genre/Style</Label>
-          <Input
-            type="search"
-            name="genre"
-            id="exampleSearch"
-            placeholder="please pick one"
-            value={genre}
-            onChange={this.handleChange}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label for="exampleText">Bio</Label>
-          <Input type="textarea" name="bio" id="exampleText" value={bio}  onChange={this.handleChange}/>
-        </FormGroup>
-        <FormGroup>
-          <Label for="exampleFile">Image</Label>
-          <Input type="file" name="image" id="exampleFile" value={image}  onChange={this.handleChange} />
-          <FormText color="muted">
-            Image is everything.  Please upload one.
-          </FormText>
-        </FormGroup>
-        <FormGroup>
-          <Label for="exampleFile">Track</Label>
-          <Input type="file" name="beat" id="exampleFile" value={beat}  onChange={this.handleChange} />
-          <FormText color="muted">
-            Track must be in .wav or .mp3 format
-          </FormText>
-        </FormGroup>
+                        <MDBInput onChange={this.handleChange} label="spotify_url" group id="spotify_url" type="spotify_url" validate error="wrong" success="right" />
+                        <MDBInput onChange={this.handleChange} label="instagram_url" group id="instagram_url" type="instagram_url" validate error="wrong" success="right" />
+                        <MDBInput onChange={this.handleChange} label="software" group id="software" type="software" validate containerClass="mb-0" />
+                        <MDBInput onChange={this.handleChange} label="genre" group id="genre" type="genre" validate containerClass="mb-0" />
+                        <MDBInput onChange={this.handleChange} label="bio" group id="bio" type="bio" validate containerClass="mb-0" />
+                        <MDBInput onChange={this.handleChange} label="image" group id="image" type="file" validate containerClass="mb-0" />
+                        <MDBInput onChange={this.handleChange} label="beat" group id="beat" type="file" validate containerClass="mb-0" />
+                        
+                      <div className="text-center mb-3">
+                        <MDBBtn onClick={this.handleSubmit} type="submit" gradient="blue" rounded className="btn-block z-depth-1a"> sign/up </MDBBtn>
+                      </div>
 
-        <Button>Submit</Button>
-        </Form>
-        </div>
+                        </MDBCardBody>
+                    </MDBCard>
+                  </MDBCol>
+                </MDBRow>
+              </MDBContainer>
+          </div>
         <div className='form_btn2'></div> 
-        </div>
+      </div>
       )
     }
 }
@@ -154,19 +112,4 @@ class ArtistForm extends Component {
 
 
 export default connect(mapStateToProps, { editArtist })(withRouter(ArtistForm))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

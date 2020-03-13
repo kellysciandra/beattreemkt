@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 import { Nav, NavItem, NavLink } from 'reactstrap';
 
+
+
+
+
+
+
 class Footer extends Component {
+
     render() {
         return (
             <div className='bottom'>
@@ -20,8 +27,8 @@ class Footer extends Component {
 
                     <NavItem className='footer_column3'><br></br>
                         producers
-                        <NavLink className='footer_link' href="#">purchasing</NavLink>
-                        <NavLink className='footer_link' href="#">guarantees</NavLink>
+                        <NavLink className='footer_link' href="#">services</NavLink>
+                        <NavLink className='footer_link' href="#">partners</NavLink>
                     </NavItem>
 
                     <NavItem className='footer_column4'><br></br>
@@ -34,11 +41,10 @@ class Footer extends Component {
                         @2020 beattreeMKT, inc. All rights reserved.
                         
                     </NavItem>
-
                 </Nav>
             </div>
         );
-    }
-}
+    };
+};
 
 export default Footer;

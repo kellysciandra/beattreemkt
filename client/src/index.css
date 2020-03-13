@@ -295,7 +295,7 @@ body {
   border: none !important ;
   width: 40%;
   margin-left: 20%;
-  margin-top: 10%;
+  margin-top: 20%;
 
 }
 .artist_profile_beat {
@@ -334,8 +334,14 @@ body {
   margin-bottom: 50%;
   border: 10px solid;
 }
-
-
+.edit_artists_page {
+  margin-top: -105%;
+  margin-left: 70%;
+}
+.edit_beat_artist_page {
+  margin-top: -100%;
+  margin-left: 70%;
+}
 
 
 /* beats main dashboard */

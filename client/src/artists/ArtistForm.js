@@ -61,7 +61,7 @@ class ArtistForm extends Component {
       //this.props.history.push('./artist)
     }
 
-    render() {
+    render() { 
       return (
         <div>
           <div className='form_btn1'><a href='/artist'><h1 className='form_header'>complete your profile</h1></a></div>      
@@ -82,7 +82,7 @@ class ArtistForm extends Component {
                         <MDBInput onChange={this.handleChange} label="beat" group id="beat" type="file" validate containerClass="mb-0" />
                         
                       <div className="text-center mb-3">
-                        <MDBBtn onClick={this.handleSubmit} type="submit" gradient="blue" rounded className="btn-block z-depth-1a"> sign/up </MDBBtn>
+                        <MDBBtn onClick={this.handleSubmit} type="submit" gradient="blue" rounded className="btn-block z-depth-1a"> edit profile </MDBBtn>
                       </div>
 
                         </MDBCardBody>

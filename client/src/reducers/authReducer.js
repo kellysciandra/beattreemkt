@@ -1,9 +1,9 @@
-import { SET_CURRENT_ARTIST, ARTIST_LOADING, GET_ARTISTS, EDIT_ARTIST } from "../actions/types";
+import { SET_CURRENT_ARTIST, ARTIST_LOADING, FETCH_ARTISTS, EDIT_ARTIST } from "../actions/types";
 const isEmpty = require('lodash/isEmpty') ;
 
-const initialState = { isAuthenticated: false, artist: {}, loading: false };
+const initialState = { isAuthenticated: false, artist: {}, artists: [], loading: false };
 
-export default function(state = initialState, action) {console.log(action.payload)
+export default function(state = initialState, action) {
   switch (action.type) { 
     case SET_CURRENT_ARTIST:
       return { 
@@ -11,12 +11,12 @@ export default function(state = initialState, action) {console.log(action.payloa
         isAuthenticated: !isEmpty(action.payload),
         artist: action.payload
       };
-    case GET_ARTISTS: 
+    case FETCH_ARTISTS: 
       return {
-        ...state, 
-        artist: action.payload
+        ...state,
+          artists: action.payload
       }
-    case EDIT_ARTIST: console.log(action)
+    case EDIT_ARTIST:
       return {
         ...state, 
         artist: action.payload

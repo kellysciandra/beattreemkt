@@ -2,7 +2,7 @@ import axios from "axios";
 import setAuthToken from "../utils/setAuthToken";
 import jwt_decode from "jwt-decode";
 
-import { GET_ERRORS, SET_CURRENT_ARTIST, ARTIST_LOADING , EDIT_ARTIST} from "./types";
+import { GET_ERRORS, SET_CURRENT_ARTIST, ARTIST_LOADING , EDIT_ARTIST, FETCH_ARTISTS} from "./types";
 
 export const registerArtist = (artistData, history) => dispatch => { 
   axios
@@ -16,10 +16,10 @@ export const registerArtist = (artistData, history) => dispatch => {
     );
 };
 
-export const loginArtist = artistData => dispatch => {
+export const loginArtist = artistData => dispatch => { console.log(artistData)
   axios
     .post("/api/artists/login", artistData)
-    .then(res => { console.log(res)
+    .then(res => { 
       const { token } = res.data;
       localStorage.setItem("jwtToken", token);
       setAuthToken(token);
@@ -51,7 +51,7 @@ export const setArtistLoading = () => {
 };
 
 
-export const logoutArtist = () => dispatch => {
+export const logoutArtist = () => dispatch => { 
   // Remove token from local storage
   localStorage.removeItem("jwtToken");
   // Remove auth header for future requests
@@ -62,16 +62,29 @@ export const logoutArtist = () => dispatch => {
 
 export const editArtist = (artistData) => dispatch => {  console.log(artistData)
   axios
-    .patch("api/artists/update/", artistData)
+    .patch("/api/artists/update", artistData)
     .then(res => 
       dispatch({
         type: EDIT_ARTIST,
         payload: artistData,
       })
     )
+    .then(res => console.log(res))
     .catch(err => console.log(err))
 };
 
+export const fetchArtists = () => dispatch => { console.log('workin')
+  axios
+    .get("/api/artists/")
+    .then(res => 
+      dispatch({
+        type: FETCH_ARTISTS,
+        payload: res.data
+      })
+    )
+    .then(res => console.log(res))
+    .catch(err => console.log(err))
+}
 
 
 

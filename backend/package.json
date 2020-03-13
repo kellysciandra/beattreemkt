@@ -30,6 +30,7 @@
     "mongoose": "^5.9.4",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "update-mongo": "0.0.4",
     "validator": "^12.2.0"
   },
   "devDependencies": {

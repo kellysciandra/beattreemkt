@@ -143,9 +143,9 @@ router.post("/login", (req, res) => {
   // );
 
   router.patch( 
-    "/update",
+    "/update/",
     passport.authenticate("jwt", { session: false }),
-    (req, res) => { 
+    (req, res) => { console.log('hit')
       let artistFields = {};
         artistFields.spotify_url = req.body.spotify_url;
         artistFields.instagram_url = req.body.instagram_url;
@@ -166,6 +166,8 @@ router.post("/login", (req, res) => {
         .catch(err => console.log(err))
     }
   )
+
+
 
 
 

@@ -29,8 +29,6 @@ class BeatsDashboard extends Component {
             }
         ]
 
-
-
         const artists = this.props.artists ? this.props.artists.map((artist) => 
             <Card className="card border-0" >
             <Card.Img className='beats_dashboard_image' variant="top" src={kelly} />
@@ -46,9 +44,6 @@ class BeatsDashboard extends Component {
                 <h1 className='bio_bar'>{artist.genre}</h1>
         </Card>
         ): <h1>loading artist</h1>
-
-
-
 
         return (
             <div>

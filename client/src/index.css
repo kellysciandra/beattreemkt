@@ -334,12 +334,22 @@ body {
   margin-bottom: 50%;
   border: 10px solid;
 }
-.edit_artists_page {
-  margin-top: -105%;
-  margin-left: 70%;
+
+.edit_info {
+  margin: 2%;
 }
-.edit_beat_artist_page {
-  margin-top: -100%;
+.add_beat {
+  margin: 2%;
+}
+.edit_photo {
+  margin: 2%;
+}
+
+.artist_button_container {
+  border: 20px solid;
+  margin-top: -60%;
+  margin-bottom: 60%;
+  width: 15%;
   margin-left: 70%;
 }
 

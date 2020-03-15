@@ -3,7 +3,7 @@ import ArtistForm from './ArtistForm.js'
 import kelly from '../images/kelly.png'
 import AudioPlayer from 'react-modular-audio-player';
 // import music from '../images/music.mp3'
-import { Card, CardBody, CardTitle, CardText, CardImg, CardLink, CardFooter, Button} from 'reactstrap';
+import { Card, CardBody, CardTitle, CardText, CardImg, CardFooter, Button} from 'reactstrap';
 import { connect } from 'react-redux'
 // import { logoutArtist } from '../actions/authActions'
 
@@ -47,8 +47,12 @@ class ArtistDashboard extends Component {
         return (
             <div className='artist_main'>
             {artist}
-            <Button className='edit_artists_page' href="/artist/edit">edit profile</Button>
-            <Button className='edit_beat_artist_page' href="/artist/edit/beat">add a beat</Button>
+            <div className='artist_button_container'>
+            <Button className='edit_info' href="/artist/edit">edit profile</Button>
+            <Button className='add_beat' href="/artist/edit/beat">upload beat</Button>
+            <Button className='edit_photo' href="/artist/edit/beat">change photo</Button>
+            </div>
+           
             </div>
         );
     }

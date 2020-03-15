@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import Dropzone from 'react-dropzone';
 
+import { connect } from 'react-redux'
+import { uploadImage } from "../actions/authActions";
+
 class Basic extends Component {
   constructor() {
     super();
@@ -12,7 +15,17 @@ class Basic extends Component {
     };
   }
 
-  render() {
+
+  handleSubmit = () => {
+    console.log('this')
+    const artistData = {
+      _id: this.props._id,
+      file: this.state.files
+    }
+    this.props.uploadImage(artistData)
+  }
+
+  render() {    console.log(this.state, this.props._id)
     const files = this.state.files.map(file => (
       <li key={file.name}>
         {file.name} - {file.size} bytes
@@ -20,6 +33,9 @@ class Basic extends Component {
     ));
 
     return (
+      <div>
+
+ 
       <Dropzone onDrop={this.onDrop}>
         {({getRootProps, getInputProps}) => (
           <section className="container">
@@ -34,8 +50,19 @@ class Basic extends Component {
           </section>
         )}
       </Dropzone>
+      <button onClick={this.handleSubmit}>submit</button>
+      </div>
     );
   }
 }
 
-export default Basic
+
+const mapStateToProps = (state) => {
+  return {
+    _id: state.auth.artist.id
+  }
+}
+
+
+
+export default connect(mapStateToProps, {uploadImage})(Basic);

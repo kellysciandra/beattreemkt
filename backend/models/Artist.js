@@ -33,6 +33,10 @@ const ArtistSchema = new Schema({
   bio: {
     type: String, 
     required: false
+  }, 
+  image: {
+    data: Buffer, 
+    contentType: String
   }
 });
 module.exports = Artist = mongoose.model("artists", ArtistSchema);

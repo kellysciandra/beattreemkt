@@ -87,75 +87,8 @@ export const fetchArtists = () => dispatch => { console.log('workin')
 }
 
 
-
-
-// export const registerEmployee = (employeeData, history) => dispatch => {
-//   axios
-//     .post("/api/employees/register", employeeData)
-//     .then(res =>  console.log(res), history.push("/employeeLogin"))
-//     .catch(err =>
-//       dispatch({
-//         type: GET_ERRORS,
-//         payload: err.response.data
-//       })
-//     );
-// };
-
-// export const loginEmployee = employeeData => dispatch => {
-//   axios
-//     .post("/api/employees/login", employeeData)
-//     .then(res => { console.log(res)
-
-//       const { token } = res.data;
-//       localStorage.setItem("jwtToken", token);
-//       setAuthToken(token);
-//       const decoded = jwt_decode(token);
-//       dispatch(setCurrentEmployee(decoded));
-//     })
-//     .catch(err =>
-//       dispatch({
-//         type: 'GET_ERRORS',
-//         payload: err.response.data
-//       })
-//     );
-// };
-
-
-
-// export const getEmployees = employeeData => dispatch => {
-//   axios
-//     .get("api/employees")
-//     .then(res => {console.log(res)
-//       dispatch({
-//         type: 'GET_EMPLOYEES',
-//         payload: res.data
-//       })
-//   })
-// }
-
-
-// export const setCurrentEmployee = decoded => {
-//   return {
-//     type: SET_CURRENT_EMPLOYEE,
-//     payload: decoded
-//   };
-// };
-
-
-// export const setEmployeeLoading = () => {
-//   return {
-//     type: EMPLOYEE_LOADING
-//   };
-// };
-
-
-// export const logoutEmployee = () => dispatch => {
-//   // Remove token from local storage
-//   localStorage.removeItem("jwtToken");
-//   // Remove auth header for future requests
-//   setAuthToken(false);
-//   console.log('logged out')
-//   dispatch(setCurrentEmployee({}));
-//   this.history.push("/")
-// };
-
+export const uploadImage = (artistData) => dispatch => { 
+  axios
+    .post("/api/artists/image/upload", artistData)
+    .then(res =>  console.log(res))
+};

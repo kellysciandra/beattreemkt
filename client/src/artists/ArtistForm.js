@@ -54,8 +54,6 @@ class ArtistForm extends Component {
         software: this.state.software,
         genre: this.state.genre,
         bio: this.state.bio,
-        image: this.state.image,
-        beat: this.state.beat
       }
       this.props.editArtist(artistData)
       //this.props.history.push('./artist)
@@ -78,8 +76,6 @@ class ArtistForm extends Component {
                         <MDBInput onChange={this.handleChange} label="software" group id="software" type="software" validate containerClass="mb-0" />
                         <MDBInput onChange={this.handleChange} label="genre" group id="genre" type="genre" validate containerClass="mb-0" />
                         <MDBInput onChange={this.handleChange} label="bio" group id="bio" type="bio" validate containerClass="mb-0" />
-                        <MDBInput onChange={this.handleChange} label="image" group id="image" type="file" validate containerClass="mb-0" />
-                        <MDBInput onChange={this.handleChange} label="beat" group id="beat" type="file" validate containerClass="mb-0" />
                         
                       <div className="text-center mb-3">
                         <MDBBtn onClick={this.handleSubmit} type="submit" gradient="blue" rounded className="btn-block z-depth-1a"> edit profile </MDBBtn>

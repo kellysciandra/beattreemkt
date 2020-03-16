@@ -169,7 +169,7 @@ const upload = multer({ storage });
       { image: req.body.file },
       { new: true, useFindAndModify: false }
     )
-    .then(artist => { console.log(artist)
+    .then(artist => { 
       return res.json(artist)
     })
     .catch(err => console.log(err))

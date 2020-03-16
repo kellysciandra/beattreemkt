@@ -48,9 +48,9 @@ class ArtistDashboard extends Component {
             <div className='artist_main'>
             {artist}
             <div className='artist_button_container'>
-            <Button className='edit_info' href="/artist/edit">edit profile</Button>
+            <Button className='edit_info' href="/artist/edit/photo">change photo</Button>
             <Button className='add_beat' href="/artist/edit/beat">upload beat</Button>
-            <Button className='edit_photo' href="/artist/edit/beat">change photo</Button>
+            <Button className='edit_photo' href="/artist/edit">edit profile</Button>
             </div>
            
             </div>

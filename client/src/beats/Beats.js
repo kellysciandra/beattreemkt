@@ -13,7 +13,7 @@ import { connect } from 'react-redux';
 class Beats extends Component {
 
  
-    render() { console.log(this.props)
+    render() {
         let playlist = [
             {
                 src: {music},
@@ -22,13 +22,7 @@ class Beats extends Component {
             }
         ]
 
-        // const artists = this.props.artists? 
-        
-
-
-
-
-
+       
         return (
             <div>
                 <h1 className='recent_uploads'>recent uploads</h1>
@@ -42,9 +36,6 @@ class Beats extends Component {
                     <i class="far fa-user fa-2px"></i>
                     </Card.Body>
                 </Card>
-
-
-
              </div>
             </div>
         );

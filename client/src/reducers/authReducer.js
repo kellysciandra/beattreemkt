@@ -1,7 +1,7 @@
 import { SET_CURRENT_ARTIST, ARTIST_LOADING, FETCH_ARTISTS, EDIT_ARTIST } from "../actions/types";
 const isEmpty = require('lodash/isEmpty') ;
 
-const initialState = { isAuthenticated: false, artist: {}, artists: [], loading: false };
+const initialState = { isAuthenticated: false, artist: {}, artists: [], files: [], loading: false };
 
 export default function(state = initialState, action) {
   switch (action.type) { 

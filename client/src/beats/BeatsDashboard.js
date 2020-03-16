@@ -20,7 +20,7 @@ class BeatsDashboard extends Component {
     }
 
  
-    render() { console.log(this.props.artists)
+    render() { 
         let playlist = [
             {
                 src: {music},
@@ -28,21 +28,17 @@ class BeatsDashboard extends Component {
                 artist: "tittyboy"
             }
         ]
+       
 
         const artists = this.props.artists ? this.props.artists.map((artist) => 
-            <Card className="card border-0" >
-            <Card.Img className='beats_dashboard_image' variant="top" src={kelly} />
-            <Card.Title className='card_name_dashboard'>{artist.name}</Card.Title> 
-                <div className='beats_dashboard_links'>  
-                    <a className="beats_dashboard_spotify" href={artist.spotify}><i class="fab fa-spotify fa-2x"></i></a><i class="fab fa-instagram fa-2x"></i>
-                </div>
-            <Card.Body>
-                <AudioPlayer audioFiles={playlist} /> 
-                <small className="text-muted">uploaded 3 mins ago  </small>
-                <i class="far fa-user fa-2px"></i> 
-            </Card.Body>
-                <h1 className='bio_bar'>{artist.genre}</h1>
-        </Card>
+
+             artist.image ? artist.image.map(x => 
+                    <div>
+                        <img src={`data:image/png;base64,${x.preview}`}/>
+                    </div>
+                ): null
+
+
         ): <h1>loading artist</h1>
 
         return (
@@ -55,11 +51,11 @@ class BeatsDashboard extends Component {
                     </div>
                 </div>
 
-                <div className='beats_dashboard_container'>
-                    <div className='beats_cards_dashboard'>
+             
+               
                     {artists}
-                </div>
-            </div>
+             
+     
         </div>
         );
     };
@@ -92,7 +88,19 @@ export default connect(mapStateToProps, {fetchArtists})(BeatsDashboard);
 
 
 
-
+// <Card className="card border-0" >
+// <Card.Img className='beats_dashboard_image' variant="top"  src={`data:image/png;base64,${artist.image.preview}`}  />
+// <Card.Title className='card_name_dashboard'>{artist.name}</Card.Title> 
+//     <div className='beats_dashboard_links'>  
+//         <a className="beats_dashboard_spotify" href={artist.spotify}><i class="fab fa-spotify fa-2x"></i></a><i class="fab fa-instagram fa-2x"></i>
+//     </div>
+// <Card.Body>
+//     <AudioPlayer audioFiles={playlist} /> 
+//     <small className="text-muted">uploaded 3 mins ago  </small>
+//     <i class="far fa-user fa-2px"></i> 
+// </Card.Body>
+//     <h1 className='bio_bar'>{artist.genre}</h1>
+// </Card>
 
 
 

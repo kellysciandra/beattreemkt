@@ -16,7 +16,7 @@ export const registerArtist = (artistData, history) => dispatch => {
     );
 };
 
-export const loginArtist = artistData => dispatch => { console.log(artistData)
+export const loginArtist = artistData => dispatch => { 
   axios
     .post("/api/artists/login", artistData)
     .then(res => { 
@@ -60,7 +60,7 @@ export const logoutArtist = () => dispatch => {
   dispatch(setCurrentArtist({}));
 };
 
-export const editArtist = (artistData) => dispatch => {  console.log(artistData)
+export const editArtist = (artistData) => dispatch => {  
   axios
     .patch("/api/artists/update", artistData)
     .then(res => 
@@ -73,7 +73,7 @@ export const editArtist = (artistData) => dispatch => {  console.log(artistData)
     .catch(err => console.log(err))
 };
 
-export const fetchArtists = () => dispatch => { console.log('workin')
+export const fetchArtists = () => dispatch => { 
   axios
     .get("/api/artists/")
     .then(res => 

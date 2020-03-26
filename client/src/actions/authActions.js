@@ -86,9 +86,3 @@ export const fetchArtists = () => dispatch => {
     .catch(err => console.log(err))
 }
 
-
-export const uploadImage = (artistData) => dispatch => { 
-  axios
-    .post("/api/artists/image/upload", artistData)
-    .then(res =>  console.log(res))
-};

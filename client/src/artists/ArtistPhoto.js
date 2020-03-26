@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Dropzone from 'react-dropzone';
 
 import { connect } from 'react-redux'
-import { uploadImage } from "../actions/authActions";
+import { uploadImage } from "../actions/imageActions";
 
 class Basic extends Component {
   constructor() {
@@ -19,18 +19,26 @@ class Basic extends Component {
               preview: URL.createObjectURL(file)
           }))
       })
-      console.log(this.state)
+      console.log(this.state.files)
   }
 
 
   handleSubmit = () => {
-    console.log('this')
+
     const artistData = {
       _id: this.props._id,
       file: this.state.files
     }
 
-    this.props.uploadImage(artistData)
+    const config = {
+      headers: {
+        'content-type': 'multipart/form-data'
+      }
+    }
+
+  
+
+    this.props.uploadImage(artistData, config)
   }
 
   render() {    

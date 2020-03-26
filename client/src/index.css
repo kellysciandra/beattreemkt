@@ -53,39 +53,40 @@ body {
 
 /* main_dashboard */
 .homepage {
-  border: 5px solid;
-  height: 1250px;
-  display: flexbox;
+  height: 1000px;
+ 
 }
-.btn_main_header {
+.main_header {
   border: 5px solid;
-
+  background-color:  rgb(47, 224, 255);
 }
 .homepage_header {
   text-shadow: blue !important;
 }
 
-.btn_container0 {
-  margin-top: 5%;
-  margin-left: 5%;
+.homepage_container0 {
+  margin-top: 10%;
+  margin-left: 15%;
+  border: 10px solid;
+  width: 30%;
 }
 
 .dash_btn0 {
   border: none;
-  margin-left: 5%;
-  height: 250px;
-  width: 250px;
+  margin-left: 8%;
+  height: 150px;
+  width: 150px;
   background-color: #EB3573;
   display: inline-block;
 }
 .dash_btn01 {
   border: none;
-  height: 250px;
-  width: 250px;
+  height: 150px;
+  width: 150px;
   background-color: #182628;
   display: inline-block;
 }
-.btn_container02 {
+/* .btn_container02 {
   border: none;
   margin-top: -15%;
   margin-left: 50%;
@@ -110,52 +111,61 @@ body {
   width: 250px;
   background-color: #182628;
   display: inline-block;
-}
+} */
 
-.btn_container {
-  margin-top: -5%;
-  border: none;
+.homepage_container1 {
+  margin-top: -10%;
+  margin-left: 55%;
+  border: 10px solid;
+  width: 30%;
 }
 .dash_btn1 {
   border: none;
-  margin-left: 5%;
-  height: 250px;
-  width: 250px;
+  margin-left: 8%;
+  height: 150px;
+  width: 150px;
   background-color: #182628;
   display: inline-block;
 }
 .artist {
   border: none;
   color: greenyellow;
-  font-size: 8em;
+  font-size: 6em;
   transform: rotate(-20deg);
 }
-.dash_btn2 {
-  height: 250px;
-  width: 250px;
-  background-color: #EB3573;
+.artist:hover {
+  text-shadow: coral;
+}
+.dash_btn11 {
+  height: 150px;
+  width: 150px;
+  background-color:  rgb(47, 224, 255);
   display: inline-block;
 }
-.btn_container2 {
+.homepage_container2 {
   border: none;
-  margin-top: -15%;
-  margin-left: 50%;
+  
+  margin-left: 15%;
+  border: 10px solid;
+  width: 30%;
 }
-.dash_btn3 {
+.dash_btn2 {
   border: none;
-  height: 250px;
-  width: 250px;
+  height: 150px;
+  width: 150px;
   background-color: #182628;
   display: inline-block;
+  margin-left: 8%;
 }
-.dash_btn4 {
+.dash_btn22 {
   border: none;
-  height: 250px;
-  width: 250px;
+  height: 150px;
+  width: 150px;
   background-color: darkorange;
   display: inline-block;
 }
-.social_links_homepage {
+
+/* .social_links_homepage {
   border: none;
   margin-top: -50%;
   margin-left: 50%;
@@ -163,7 +173,7 @@ body {
 }
 .fab {
   border: none;
-  margin-left: 5%;
+  margin-left: 10%;
   color:  none;
 }
 .dashboard_links {
@@ -172,7 +182,7 @@ body {
 .cards {
     border: none;
     width: 70%;
-}
+} */
 
 
 /* beat cards  <Beats /> */
@@ -214,7 +224,7 @@ body {
   border: none;
 }
 .audio-player {
-  border: 5px solid
+  border: 2px solid;
 }
 
   
@@ -287,24 +297,22 @@ body {
 
 
 /* artist homepage  */
-.artist_main {
+/* .artist_main {
   border: 5px solid
-  
-}
-.artist_card {
-  border: none !important ;
-  width: 40%;
-  margin-left: 20%;
-  margin-top: 20%;
+} */
 
+.artists_card {
+  margin-left: 35%;
+  margin-top: -10%
 }
+
 .artist_profile_beat {
   border: none !important;
   background: none !important;
   width: 50%;
   margin-left: 25%;
 }
-.artist_beat_box {
+/* .artist_beat_box {
   border: none;
   margin-left: 95%;
   margin-top: 20%;
@@ -328,13 +336,18 @@ body {
   width: 100px;
   background-color: greenyellow;
   display: inline-block;
-}
-.profile_beat_container {
+} */
+/* .profile_beat_container {
   margin-top: -80%;
   margin-bottom: 50%;
   border: 10px solid;
-}
+} */
 
+.artist_button_container {
+  margin-top: 15%;
+  width: 10%;
+  margin-left: 15%;
+}
 .edit_info {
   margin: 2%;
 }
@@ -344,27 +357,26 @@ body {
 .edit_photo {
   margin: 2%;
 }
-
-.artist_button_container {
-  border: 20px solid;
-  margin-top: -60%;
-  margin-bottom: 60%;
-  width: 15%;
-  margin-left: 70%;
+.artists_name_header {
+  border: none;
+  color: greenyellow;
+  font-size: 8em;
+  margin-left: 5%;
 }
 
 
 /* beats main dashboard */
 
-.beats_dashboard_container {
-  border: 5px solid;
+.beats_card {
+  margin-left: 30%;
+  margin-top: 10%;
 }
 .card_name_dashboard {
   border-top: 5px solid;
-  margin-bottom: 5%;
+  width: 50%;
 }
 .beats_dashboard_header {
-  margin-left: 25%;
+  margin-left: 15%;
   margin-top: 10%;
   font-size: 2em!important;  
   writing-mode: vertical-rl;
@@ -376,33 +388,28 @@ body {
   height: 500px;
   margin-left: 20%;
   margin-top: 10%;
-  margin-bottom: 10%;
   border: 5px solid
 }
 .beats_dashboard_links {
-  margin-left: 65%;
-  margin-top: -10%;
   border: 2px solid greenyellow;
-  width: 15%;
+  width: 10%;
+  margin-top: 1%;
+  margin-left: 5%;
 }
 .beats_dashboard_spotify {
   color: black !important
 }
 .beats_dashboard_image {
-  max-width: 65%;
+  max-width: 50%;
   height: 15vw;
 }
 .bio_bar {
   border: none;
-  margin-left: 70%;
-  margin-top: -40%;
-  margin-bottom: 30%;
-  height: 70px;
- 
+  height: 50px;
   border: 5px solid;
   display: inline-block;
   color: greenyellow;
-  font-size: 3em;
+  font-size: 2em;
 }
 
 .artist_bar {
@@ -410,6 +417,16 @@ body {
   margin-left: -20%;
   transform: rotate(-20deg);
   color: greenyellow;
+}
+
+  /* audio player  */
+
+.audio-player {
+  width: 5%;
+  border: none!important;
+  margin-left: 18%;
+  margin-top: -13%;
+  margin-bottom: 5%;
 }
 
 /* title_bar */
@@ -489,7 +506,6 @@ body {
 
 /* photo drop */
 .photo_drop {
-
   margin-left: 50%;
   margin-top: 15%;
 }
@@ -514,3 +530,10 @@ body {
   .footer_link {
     color:   #718f94!important;   
   }
+
+
+
+
+
+
+

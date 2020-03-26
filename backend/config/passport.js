@@ -12,7 +12,7 @@ module.exports = passport => {
   passport.use(
     new JwtStrategy(opts, (jwt_payload, done) => {
       Artist.findById(jwt_payload.id)
-        .then(artist => {
+        .then(artist => { 
           if (artist) {
             return done(null, artist);
           }

@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 const keys = require("../../config/keys");
 const passport = require("passport");
 
-//image 
+// image 
 const multer = require('multer');
 const path = require('path');
 
@@ -87,6 +87,7 @@ router.post("/login", (req, res) => {
             image: artist.image, 
             beat: artist.beat
           };
+          console.log(payload)
   // Sign token
           jwt.sign(
             payload,
@@ -119,6 +120,7 @@ router.post("/login", (req, res) => {
     }
   })
 
+
   router.patch( 
     "/update/",
     passport.authenticate("jwt", { session: false }),
@@ -146,55 +148,39 @@ router.post("/login", (req, res) => {
 
 
 
-//images 
+// images 
 
-// Set The Storage Engine
-const storage = multer.diskStorage({
-  destination: './public/uploads',
-  filename(req, file, cb) {
-    cb(null, `${new Date()}-${file.originalname}`);
-  },
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      console.log(file) 
+      cb(null, 'public/uploads')
+    },
+    filename: function (req, file, cb) {
+      cb(null, file.fieldname + '-' + Date.now())
+    }
 });
-
-// Init Upload
-const upload = multer({ storage });
+var upload = multer({dest: '../public/uploads'});
 
 
-  router.post( "/image/upload", upload.single('img'), (req, res, err) => {
-    console.log(req.body.file)
-    console.log(req.body._id)
+  router.post( "/image/upload", upload.single('image'), function (req, res, err) {
+    console.log("success");
+    console.log(req.body);
+    let artistFields = {};
+    artistFields.image = req.body.file;
 
     Artist.findOneAndUpdate( 
       { _id: req.body._id },
-      { image: req.body.file },
+      { $set: artistFields },
       { new: true, useFindAndModify: false }
     )
-    .then(artist => { 
-      return res.json(artist)
-    })
-    .catch(err => console.log(err))
+      .then(artist => { console.log(artist)
+        return res.json(artist)
+      })
+      .catch(err => console.log(err))
   })
 
 
   
-      
-     
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   module.exports = router;
 
 

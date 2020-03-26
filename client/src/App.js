@@ -17,7 +17,7 @@ import ArtistDashboard from './artists/ArtistDashboard.js'
 import PrivateRouteArtist from './private-route/PrivateRouteArtist'
 import ArtistForm from './artists/ArtistForm.js'
 import ArtistPhoto from './artists/ArtistPhoto.js'
-import Basic from './beats/Basic.js'
+
 //styling
 import './index.css';
 //redux
@@ -59,7 +59,7 @@ function App(props) {
           <Route exact path="/artist/edit" component={ArtistForm} />
           <Route exact path="/artist/edit/photo" component={ArtistPhoto}/>
           <Route exact path="/beats" component={BeatsDashboard} />
-          <Route exact path="/basic" component={Basic} />
+
           {/* <Route exact path="/artist" component={ArtistDashboard} /> */}
       <Switch>
       <PrivateRouteArtist exact path='/artist' component={ArtistDashboard} />

@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card'
 
 import kelly from '../images/kelly.png'
-import kelly3 from '../images/kelly3.png'
-import joy from '../images/joy.png'
+
 
 // import AudioPlayer from "react-h5-audio-player";
 import AudioPlayer from 'react-modular-audio-player';
